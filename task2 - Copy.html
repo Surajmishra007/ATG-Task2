@@ -26,9 +26,9 @@
 		  left: 0;
 		  top: 0;
 		  overflow:auto; 
-		  width: 100%; /* Full width */
-		  height: 100%; /* Full height */
-		  background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+		  width: 100%;
+		  height: 100%; 
+		  background-color: rgba(0,0,0,0.3); 
 		}
 
 		.content {
@@ -286,29 +286,29 @@
 <script>
   $(document).ready(function(){
     
-    /*opening of modal on clicking button*/
+   
     $("#myBtn").click(function(){
       $("#modal1").show();
     });
 
-    /*closing of modal on clicking cross*/
+    
     $("#close").click(function(){
       $("#modal1").hide();
     });
 
-    /*selecting radio button from event modal*/
+    
     $('#form1').on('change',function(){
       
-      $('#next').attr('disabled',false);/*defreeezing of next button*/
+      $('#next').attr('disabled',false);
       $('#next').css('opacity',1);
 
-      /*if selected radio button is for paid event*/
+      
       if( $('input[name=event]:checked','#form1').val()=="paid"){
         
         $('#divfree').removeClass("selected");
         $('#divpaid').addClass("selected");
           
-        /*opening of paid modal on clicking next button*/
+        
         $("#next").click(function(){
             $("#modal1").hide();
             $("#modal3").hide();
@@ -316,13 +316,13 @@
             });
       }
 
-       /*if selected radio button is for free event*/
+       
       if( $('input[name=event]:checked','#form1').val()=="free"){
 
         $('#divpaid').removeClass("selected");
         $('#divfree').addClass("selected");
          
-        /*opening of free event modal on clicking next button*/
+        
         $("#next").click(function(){
           $("#modal3").show();
           $("#modal2").hide();
@@ -332,7 +332,7 @@
 
     });
 
-    /*selecting radio button from paid modal*/
+    
     $('#form2').on('change',function(){
       if( $('input[name=paid]:checked','#form2').val() =="single"){
         $('#divmultiple').removeClass("selected");
@@ -346,7 +346,7 @@
     });
   });
   
-    /*going back to first modal on clicking back arrow*/
+   
   function back2(){
     var back= document.getElementById("back");
     modal2.style.display = "none";
@@ -354,7 +354,7 @@
     modal1.style.display = "block";  
   }
 
-  /*going back to first modal on clicking back arrow*/
+
   function back3(){
    var back= document.getElementById("back");
       modal3.style.display = "none";
